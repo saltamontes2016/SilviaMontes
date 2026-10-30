@@ -1,0 +1,356 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Portfolio Silvia Montes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Montserrat:wght@200;300;500&display=swap">
+<style>
+/* Concept: a quiet grey gallery wall. White panels hold the work, wide-tracked light capitals carry the name, and the colour comes only from the campaigns. */
+:root {
+  --ground: #e7e8e9;
+  --panel: #ffffff;
+  --ink: #111214;
+  --mute: #666a70;
+  --line: #d3d5d8;
+  --tag-bg: #000000;
+  --tag-fg: #ffffff;
+  --art: #f3f3f3;
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(14px, 3vw, 36px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0e0f10; --panel: #17181a; --ink: #ececed; --mute: #9b9ea3; --line: #2b2d30;
+    --tag-bg: #ececed; --tag-fg: #0e0f10; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0e0f10; --panel: #17181a; --ink: #ececed; --mute: #9b9ea3; --line: #2b2d30;
+  --tag-bg: #ececed; --tag-fg: #0e0f10; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--ground);
+}
+img { display: block; height: auto; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 1240px; margin: 0 auto; }
+
+/* Header */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--ground);
+  border-bottom: 1px solid var(--line);
+}
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.brand, .nav a {
+  font-family: var(--font-display); text-transform: uppercase; text-decoration: none;
+}
+.brand { font-weight: 500; font-size: .72rem; letter-spacing: .38em; }
+.nav { display: flex; gap: clamp(14px, 3vw, 34px); }
+.nav a { font-weight: 300; font-size: .7rem; letter-spacing: .3em; color: var(--mute); padding-block: 4px; border-bottom: 1px solid transparent; }
+.nav a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* Hero */
+.hero { padding-block: clamp(40px, 8vw, 96px) clamp(28px, 5vw, 56px); display: grid; gap: 28px; }
+.hero h1 {
+  margin: 0; font-family: var(--font-display); font-weight: 200; text-transform: uppercase;
+  font-size: clamp(1.45rem, 5.2vw, 3.6rem); letter-spacing: .34em; line-height: 1.25; text-wrap: balance;
+}
+.hero h1 span { display: inline-block; }
+.hero h1 .last { color: var(--mute); }
+.hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; }
+.tag {
+  display: inline-block; background: var(--tag-bg); color: var(--tag-fg);
+  font-family: var(--font-display); font-weight: 300; font-size: .68rem; letter-spacing: .4em;
+  text-transform: uppercase; padding: 7px 14px 7px 18px;
+}
+.lede { margin: 0; max-width: 46ch; color: var(--mute); font-size: 1.05rem; }
+
+/* Sections */
+.section { padding-block: clamp(20px, 4vw, 48px); }
+.section-title {
+  display: flex; align-items: baseline; gap: 18px; margin: 0 0 clamp(18px, 3vw, 32px);
+  font-family: var(--font-display); font-weight: 200; font-size: clamp(.95rem, 2.2vw, 1.3rem);
+  letter-spacing: .6em; text-transform: uppercase;
+}
+.section-title::after { content: ""; flex: 1; height: 1px; background: var(--line); transform: translateY(-.3em); }
+.stack { display: grid; gap: clamp(14px, 2.4vw, 28px); }
+
+.panel { background: var(--panel); padding: clamp(14px, 2.4vw, 32px); min-width: 0; }
+
+/* Images */
+.zoom { display: block; width: 100%; padding: 0; border: 0; background: var(--art); cursor: zoom-in; position: relative; }
+.zoom img { width: 100%; transition: opacity .2s ease; }
+.zoom:hover img { opacity: .93; }
+.wide { margin-bottom: 0; }
+
+/* Project captions */
+.cap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 12px clamp(20px, 4vw, 56px); padding-top: clamp(16px, 2vw, 24px); }
+.cap-l, .cap-r { min-width: 0; }
+.cap h3, .ev-head h3 { margin: 0; font-family: var(--font-body); font-weight: 400; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.25; text-wrap: balance; }
+.cat { margin: 6px 0 0; font-family: var(--font-display); font-weight: 300; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); line-height: 1.8; }
+.cap-r p { margin: 0 0 10px; max-width: 62ch; }
+.cap-r .note { color: var(--mute); font-size: .9rem; }
+.more {
+  display: inline-block; margin-top: 10px; font-family: var(--font-display); font-weight: 500;
+  font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; text-decoration: none;
+  border-bottom: 1px solid var(--ink); padding-bottom: 3px;
+}
+.more::after { content: " \2197"; letter-spacing: 0; }
+.more:hover { opacity: .65; }
+
+/* Events */
+.ev-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding-bottom: clamp(16px, 2vw, 24px); }
+@media (min-width: 900px) { .ev-head { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 40px; } }
+.stats { display: flex; flex-wrap: wrap; gap: 14px 0; }
+.stats div { display: flex; flex-direction: column; gap: 2px; padding-inline: clamp(14px, 2vw, 28px); border-left: 1px solid var(--ink); }
+.stats div:first-child { padding-left: 0; border-left: 0; }
+.stats b { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.25rem, 2.4vw, 1.9rem); line-height: 1.1; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.stats span { font-size: .8rem; color: var(--mute); line-height: 1.3; }
+
+.event .wide { margin-bottom: clamp(8px, 1.2vw, 14px); }
+.masonry { column-width: 210px; column-gap: clamp(8px, 1.2vw, 14px); }
+.masonry .zoom { break-inside: avoid; margin-bottom: clamp(8px, 1.2vw, 14px); }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(8px, 1.2vw, 14px); }
+@media (max-width: 700px) { .pair { grid-template-columns: minmax(0, 1fr); } .cap { grid-template-columns: minmax(0, 1fr); } }
+
+/* Contact */
+.contact { display: grid; gap: clamp(24px, 4vw, 56px); grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; padding: clamp(24px, 5vw, 64px); }
+@media (max-width: 800px) { .contact { grid-template-columns: minmax(0, 1fr); } }
+.quote { margin: 0; font-style: italic; font-weight: 300; font-size: clamp(1.1rem, 2vw, 1.5rem); line-height: 1.6; max-width: 36em; text-wrap: pretty; }
+.who h2 { margin: 0 0 18px; font-family: var(--font-display); font-weight: 300; font-size: clamp(1rem, 2vw, 1.3rem); letter-spacing: .5em; text-transform: uppercase; line-height: 1.4; }
+.who h2 .last { color: var(--mute); }
+.lines { display: grid; gap: 10px; }
+.line { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.line a { text-decoration: none; overflow-wrap: anywhere; }
+.line a:hover { text-decoration: underline; }
+.copy {
+  font-family: var(--font-display); font-weight: 300; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase;
+  background: transparent; color: var(--mute); border: 1px solid var(--line); padding: 5px 10px; cursor: pointer;
+}
+.copy:hover { color: var(--ink); border-color: var(--ink); }
+
+footer { padding-block: 28px calc(36px + env(safe-area-inset-bottom, 0px)); color: var(--mute); font-size: .78rem; letter-spacing: .08em; }
+
+/* Lightbox */
+.lb { position: fixed; inset: 0; z-index: 50; background: rgba(8, 9, 10, .92); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.lb img { max-width: 100%; max-height: calc(100% - 3rem); width: auto; height: auto; object-fit: contain; background: var(--art); }
+.lb p { margin: 0; color: #cfd1d4; font-size: .85rem; text-align: center; max-width: 70ch; }
+.lb button {
+  position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px));
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.4); padding: 8px 14px; cursor: pointer;
+  font-family: var(--font-display); font-weight: 300; font-size: .65rem; letter-spacing: .26em; text-transform: uppercase;
+}
+.lb button:hover { border-color: #fff; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .zoom img { transition: none; } }
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Silvia Montes</a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#conceptos">Conceptos</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="inicio">
+  <section class="hero" aria-label="Presentación">
+    <h1><span>Silvia</span> <span class="last">Montes</span></h1>
+    <div class="hero-row">
+      <span class="tag">Portfolio</span>
+      <p class="lede">Campañas de concienciación, lanzamientos y eventos de publicidad médica.</p>
+    </div>
+  </section>
+
+  <section class="section" id="conceptos" aria-labelledby="t-conceptos">
+    <h2 class="section-title" id="t-conceptos">Conceptos</h2>
+    <div class="stack">
+<article class="panel project">
+  <button class="zoom wide" type="button" aria-label="Ampliar: Carteles de la campaña de vacunación de la gripe de la Junta de Andalucía 2023-24: una mujer embarazada con olivo y una mujer mayor con guitarra y azahar"><img src="img/gripe-2324.jpg" width="1844" height="1051" alt="Carteles de la campaña de vacunación de la gripe de la Junta de Andalucía 2023-24: una mujer embarazada con olivo y una mujer mayor con guitarra y azahar" loading="lazy" decoding="async"></button>
+  <div class="cap">
+    <div class="cap-l"><h3>Hay cosas muy nuestras</h3><p class="cat">Campaña de vacunación de la gripe · Junta de Andalucía 2023-24</p></div>
+    <div class="cap-r"><p>Dos carteles que unen retratos en blanco y negro con símbolos andaluces, como el olivo, la guitarra y el azahar, bajo el lema “que la vacuna de la gripe sea una de ellas”.</p><a class="more" href="https://drive.google.com/drive/folders/1VC9J7ICTdN88e2gwIXahrEPEfrM2m6fA?usp=drive_link" target="_blank" rel="noopener">Ver más en Drive</a></div>
+  </div>
+</article>
+<article class="panel project">
+  <button class="zoom wide" type="button" aria-label="Ampliar: Carteles ilustrados de la campaña de vacunación de la gripe 2021-23, uno naranja con olivo y otro azul con una barca"><img src="img/gripe-2123.jpg" width="1844" height="1051" alt="Carteles ilustrados de la campaña de vacunación de la gripe 2021-23, uno naranja con olivo y otro azul con una barca" loading="lazy" decoding="async"></button>
+  <div class="cap">
+    <div class="cap-l"><h3>Hay cosas muy nuestras</h3><p class="cat">Campaña de vacunación de la gripe · Junta de Andalucía 2021-23</p></div>
+    <div class="cap-r"><p>Las ediciones anteriores del mismo territorio creativo, con ilustración, el olivo y la barca de pesca como imágenes de lo propio y el cierre “este año más que nunca, ¡vacúnate!”.</p></div>
+  </div>
+</article>
+<article class="panel project">
+  <button class="zoom wide" type="button" aria-label="Ampliar: Piezas de la campaña Proteína oPKUpa sobre PKU: un huevo roto sobre fondo crema, un vaso de leche roto sobre fondo rosa y una nuez abierta sobre fondo verde"><img src="img/pku.jpg" width="1844" height="1051" alt="Piezas de la campaña Proteína oPKUpa sobre PKU: un huevo roto sobre fondo crema, un vaso de leche roto sobre fondo rosa y una nuez abierta sobre fondo verde" loading="lazy" decoding="async"></button>
+  <div class="cap">
+    <div class="cap-l"><h3>Proteína oPKUpa</h3><p class="cat">Campaña de concienciación sobre la enfermedad rara PKU · PTC Therapeutics</p></div>
+    <div class="cap-r"><p>Un huevo roto, un vaso de leche roto y una nuez abierta ilustran el mensaje de desalojar a la proteína oPKUpa de las decisiones de las personas con PKU.</p><a class="more" href="https://drive.google.com/drive/folders/1VDyGLyTY7kXHm_Ncf2pA9mH_BLz-hmqg?usp=drive_link" target="_blank" rel="noopener">Ver más en Drive</a></div>
+  </div>
+</article>
+<article class="panel project">
+  <button class="zoom wide" type="button" aria-label="Ampliar: Tres carteles de la campaña de la EPOC con las frases dar las gracias, decir te quiero y desear buenos días dentro de bocadillos de diálogo"><img src="img/epoc.jpg" width="1844" height="1051" alt="Tres carteles de la campaña de la EPOC con las frases dar las gracias, decir te quiero y desear buenos días dentro de bocadillos de diálogo" loading="lazy" decoding="async"></button>
+  <div class="cap">
+    <div class="cap-l"><h3>Respirar no debería costar tanto</h3><p class="cat">Campaña de concienciación sobre la EPOC · FENAER</p></div>
+    <div class="cap-r"><p>Tres carteles tipográficos comparan lo que damos por hecho al respirar, como dar las gracias, decir te quiero o desear buenos días, con el acceso a soluciones innovadoras en EPOC.</p></div>
+  </div>
+</article>
+<article class="panel project">
+  <button class="zoom wide" type="button" aria-label="Ampliar: Imagen de El monstruo de la laguna, un monstruo de colores sobre fondo azul claro, junto a una acción en el estanque del Retiro y un libro de cuentos"><img src="img/monstruo.jpg" width="1844" height="1051" alt="Imagen de El monstruo de la laguna, un monstruo de colores sobre fondo azul claro, junto a una acción en el estanque del Retiro y un libro de cuentos" loading="lazy" decoding="async"></button>
+  <div class="cap">
+    <div class="cap-l"><h3>El monstruo de la laguna</h3><p class="cat">Campaña de concienciación sobre el diagnóstico temprano del Alzheimer · Público general</p></div>
+    <div class="cap-r"><p>Un monstruo de colores y textura suave que sale de la laguna para hablar de la enfermedad con las familias. Incluye acciones en exterior y cuentos explicativos.</p><p class="note">Imagen del estanque realizada mediante IA.</p></div>
+  </div>
+</article>
+<article class="panel project">
+  <button class="zoom wide" type="button" aria-label="Ampliar: Dos piezas de la campaña Vacío con retratos parcialmente desenfocados de una mujer y de un hombre mayor"><img src="img/vacio.jpg" width="1844" height="1051" alt="Dos piezas de la campaña Vacío con retratos parcialmente desenfocados de una mujer y de un hombre mayor" loading="lazy" decoding="async"></button>
+  <div class="cap">
+    <div class="cap-l"><h3>Vacío</h3><p class="cat">Campaña de concienciación sobre el diagnóstico temprano del Alzheimer · Lilly</p></div>
+    <div class="cap-r"><p>Retratos que se desenfocan a media cara y una sola palabra, con el lema “en Alzheimer, nunca una palabra estuvo tan llena”.</p></div>
+  </div>
+</article>
+<article class="panel project">
+  <button class="zoom wide" type="button" aria-label="Ampliar: Dos piezas de Idorsia: Historia de un sueño y Reactivistas del sueño, con lettering amarillo sobre fotografías"><img src="img/insomnio.jpg" width="1844" height="1051" alt="Dos piezas de Idorsia: Historia de un sueño y Reactivistas del sueño, con lettering amarillo sobre fotografías" loading="lazy" decoding="async"></button>
+  <div class="cap">
+    <div class="cap-l"><h3>Historia de un sueño · Reactivistas del sueño</h3><p class="cat">Campañas para nuevas formas de tratamiento del insomnio crónico · Idorsia</p></div>
+    <div class="cap-r"><p>Dos conceptos de lanzamiento con lettering a mano en amarillo, uno para el nuevo paradigma en el tratamiento del insomnio crónico y otro que invita a unirse a un movimiento el 21 de septiembre de 2023.</p></div>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <section class="section" id="eventos" aria-labelledby="t-eventos">
+    <h2 class="section-title" id="t-eventos">Eventos</h2>
+    <div class="stack">
+<article class="panel event">
+  <header class="ev-head">
+    <div class="cap-l"><h3>Esenciales</h3><p class="cat">Reunión de médicos para el lanzamiento de una nueva indicación en poliposis · 7 y 8 de febrero · Sanofi y Regeneron</p><a class="more" href="https://drive.google.com/drive/folders/1uTnr0PFCIVdAC7CLJlYN9i2U5_C5NN4m?usp=drive_link" target="_blank" rel="noopener">Ver más en Drive</a></div>
+    <div class="stats"><div><b>2</b><span>días</span></div><div><b>San Sebastián</b><span>Basque Culinary Center</span></div><div><b>+200</b><span>asistentes</span></div></div>
+  </header>
+  <div class="masonry"><button class="zoom " type="button" aria-label="Ampliar: Cartel de Esenciales con una flor gris y un recuadro naranja"><img src="img/es-flor.jpg" width="420" height="593" alt="Cartel de Esenciales con una flor gris y un recuadro naranja" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Cartel de Esenciales con un higo abierto"><img src="img/es-higo.jpg" width="210" height="298" alt="Cartel de Esenciales con un higo abierto" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Cartel de Esenciales con un pastel de frambuesa"><img src="img/es-cupcake.jpg" width="211" height="299" alt="Cartel de Esenciales con un pastel de frambuesa" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Cartel de Esenciales con cucharas de especias"><img src="img/es-especias.jpg" width="278" height="518" alt="Cartel de Esenciales con cucharas de especias" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Sala del evento con pantalla y cartelería de Esenciales"><img src="img/es-sala.jpg" width="358" height="254" alt="Sala del evento con pantalla y cartelería de Esenciales" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Rótulo luminoso de Esenciales en la sala"><img src="img/es-brillo.jpg" width="362" height="407" alt="Rótulo luminoso de Esenciales en la sala" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Mostrador de bienvenida del evento"><img src="img/es-bienvenida.jpg" width="362" height="288" alt="Mostrador de bienvenida del evento" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Agenda impresa del evento"><img src="img/es-agenda.jpg" width="275" height="370" alt="Agenda impresa del evento" loading="lazy" decoding="async"></button></div>
+</article>
+<article class="panel event">
+  <header class="ev-head">
+    <div class="cap-l"><h3>El futuro eres tú</h3><p class="cat">Convención Nacional AstraZeneca 2023</p></div>
+    <div class="stats"><div><b>3</b><span>días</span></div><div><b>Sevilla</b><span>Convención nacional</span></div><div><b>+1.000</b><span>asistentes</span></div></div>
+  </header>
+  <button class="zoom wide" type="button" aria-label="Ampliar: Escenario de la convención con cubos luminosos y la pantalla El futuro eres tú"><img src="img/az-escenario.jpg" width="1067" height="711" alt="Escenario de la convención con cubos luminosos y la pantalla El futuro eres tú" loading="lazy" decoding="async"></button><div class="masonry"><button class="zoom " type="button" aria-label="Ampliar: Fachada del recinto cubierta con retratos del equipo"><img src="img/az-fachada.jpg" width="324" height="265" alt="Fachada del recinto cubierta con retratos del equipo" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Atrio con paneles de colores y retratos"><img src="img/az-atrio.jpg" width="300" height="528" alt="Atrio con paneles de colores y retratos" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Espacio This is ME con cajas de madera y paneles azules"><img src="img/az-thisisme.jpg" width="326" height="239" alt="Espacio This is ME con cajas de madera y paneles azules" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Espacio de sostenibilidad con totems informativos"><img src="img/az-sostenibilidad.jpg" width="649" height="373" alt="Espacio de sostenibilidad con totems informativos" loading="lazy" decoding="async"></button></div>
+</article>
+<article class="panel event">
+  <header class="ev-head">
+    <div class="cap-l"><h3>Nexus</h3><p class="cat">Experiencia inmersiva para Sanofi, con los cuatro elementos como hilo conductor: agua, aire, tierra y fuego</p></div>
+    <div class="stats"><div><b>3</b><span>días</span></div><div><b>Sitges</b><span>Experiencia inmersiva</span></div><div><b>150</b><span>directivos a nivel mundial</span></div></div>
+  </header>
+  <button class="zoom wide" type="button" aria-label="Ampliar: Sala de Nexus con proyecciones vegetales en las paredes y público sentado"><img src="img/nx-sala.jpg" width="1005" height="719" alt="Sala de Nexus con proyecciones vegetales en las paredes y público sentado" loading="lazy" decoding="async"></button><div class="masonry"><button class="zoom " type="button" aria-label="Ampliar: Logotipo de Nexus con una X de colores y los cuatro elementos"><img src="img/nx-logo.jpg" width="365" height="393" alt="Logotipo de Nexus con una X de colores y los cuatro elementos" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Sala de Nexus con luz morada y una cita proyectada"><img src="img/nx-sala2.jpg" width="309" height="190" alt="Sala de Nexus con luz morada y una cita proyectada" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Letras volumétricas de Nexus en el vestíbulo"><img src="img/nx-letras.jpg" width="315" height="192" alt="Letras volumétricas de Nexus en el vestíbulo" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Vestíbulo de cristal con un árbol decorativo"><img src="img/nx-lobby.jpg" width="318" height="239" alt="Vestíbulo de cristal con un árbol decorativo" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Platea con sillas en círculo y pasarela central"><img src="img/nx-sillas.jpg" width="318" height="239" alt="Platea con sillas en círculo y pasarela central" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Escenario de Nexus con iluminación morada"><img src="img/nx-escenario.jpg" width="320" height="239" alt="Escenario de Nexus con iluminación morada" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Iconos de los cuatro elementos: agua, aire, tierra y fuego"><img src="img/nx-elementos.jpg" width="394" height="83" alt="Iconos de los cuatro elementos: agua, aire, tierra y fuego" loading="lazy" decoding="async"></button></div>
+</article>
+<article class="panel event">
+  <header class="ev-head">
+    <div class="cap-l"><h3>Una evolución de líder</h3><p class="cat">1.er Congreso Comercial AstraZeneca Oncología · Palacio de Neptuno, Madrid · 10 de mayo de 2017</p></div>
+    <div class="stats"><div><b>1.er</b><span>congreso comercial</span></div><div><b>Madrid</b><span>Palacio de Neptuno</span></div><div><b>2017</b><span>10 de mayo</span></div></div>
+  </header>
+  <div class="pair"><button class="zoom " type="button" aria-label="Ampliar: Banderolas Innovación, Evolución y Liderazgo en la fachada del Palacio de Neptuno, y save the date del congreso"><img src="img/cc-exterior.jpg" width="1844" height="1051" alt="Banderolas Innovación, Evolución y Liderazgo en la fachada del Palacio de Neptuno, y save the date del congreso" loading="lazy" decoding="async"></button><button class="zoom " type="button" aria-label="Ampliar: Interior del Palacio de Neptuno con mostrador en forma de AZ, sala de plenario, escalera con valores y folleto del congreso"><img src="img/cc-interior.jpg" width="1844" height="1051" alt="Interior del Palacio de Neptuno con mostrador en forma de AZ, sala de plenario, escalera con valores y folleto del congreso" loading="lazy" decoding="async"></button></div>
+</article>
+<article class="panel event">
+  <header class="ev-head">
+    <div class="cap-l"><h3>Un extra de ilusión</h3><p class="cat">Concepts para una reunión interna de Pfizer Inflammation &amp; Immunology</p></div>
+    <div class="stats"><div><b>3</b><span>conceptos</span></div></div>
+  </header>
+  <button class="zoom wide" type="button" aria-label="Ampliar: Tres conceptos para Pfizer con el lema Nos hacen ser extraordinarios sobre fotografías en blanco y negro con un círculo rojo"><img src="img/pfizer.jpg" width="1839" height="1051" alt="Tres conceptos para Pfizer con el lema Nos hacen ser extraordinarios sobre fotografías en blanco y negro con un círculo rojo" loading="lazy" decoding="async"></button>
+</article>
+    </div>
+  </section>
+
+  <section class="section" id="contacto" aria-labelledby="t-contacto">
+    <div class="panel contact">
+      <blockquote class="quote">“Creo en la creatividad, en el trabajo en equipo, en la generosidad de hacer mejores a los demás, en sacar lo mejor de cada uno, en tener ideas brillantes o hacerlas brillar, en la ilusión, en el esfuerzo y en el buen humor… en definitiva, creo en la publicidad.”</blockquote>
+      <div class="who">
+        <h2 id="t-contacto">Silvia <span class="last">Montes</span></h2>
+        <div class="lines">
+          <div class="line"><a href="tel:+34630465445" id="tel">630 465 445</a><button class="copy" type="button" data-copy="630 465 445">Copiar</button></div>
+          <div class="line"><a href="mailto:silviamontesgarcia3@gmail.com" id="mail">silviamontesgarcia3@gmail.com</a><button class="copy" type="button" data-copy="silviamontesgarcia3@gmail.com">Copiar</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Silvia Montes · Portfolio 2025</footer>
+</main>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+  <button type="button" id="lb-close">Cerrar</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</div>
+
+<script>
+(function () {
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'),
+      lbCap = document.getElementById('lb-cap'), closeBtn = document.getElementById('lb-close'), last = null;
+
+  function open(btn) {
+    var img = btn.querySelector('img');
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = img.alt;
+    lb.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    last = btn;
+    closeBtn.focus();
+  }
+  function close() {
+    lb.hidden = true;
+    lbImg.removeAttribute('src');
+    document.documentElement.style.overflow = '';
+    if (last) last.focus();
+  }
+  document.addEventListener('click', function (e) {
+    var z = e.target.closest('.zoom');
+    if (z) { open(z); return; }
+    if (!lb.hidden && (e.target === lb || e.target === closeBtn)) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lb.hidden) close();
+  });
+
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.getAttribute('data-copy'), original = b.textContent;
+      function done() { b.textContent = 'Copiado'; setTimeout(function () { b.textContent = original; }, 1600); }
+      function fallback() {
+        var a = b.previousElementSibling, r = document.createRange();
+        r.selectNodeContents(a);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        b.textContent = 'Selecciona y copia';
+        setTimeout(function () { b.textContent = original; }, 2200);
+      }
+      try {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } catch (err) { fallback(); }
+    });
+  });
+})();
+</script>
+
+</body></html>
